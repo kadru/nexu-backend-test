@@ -9,10 +9,10 @@ class BrandsControllerTest < ActionDispatch::IntegrationTest
     assert_equal [
       { "id" => audi_brand.id,
         "name" => audi_brand.name,
-        "average_price" => audi_brand.average_price },
+        "average_price" => 0.0 },
       { "id" => acura_brand.id,
         "name" => acura_brand.name,
-        "average_price" => acura_brand.average_price }
+        "average_price" => 375684.5 }
     ],
     response.parsed_body
   end
@@ -27,7 +27,7 @@ class BrandsControllerTest < ActionDispatch::IntegrationTest
     assert_response :created
     assert_kind_of Integer, parsed_response["id"]
     assert_equal "Toyoda", parsed_response["name"]
-    assert_nil parsed_response["average_price"]
+    assert_equal 0.0, parsed_response["average_price"]
   end
 
   test "POST /brands when cannot create a brand" do
