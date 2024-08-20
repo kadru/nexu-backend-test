@@ -562,7 +562,6 @@
 {"id": 1268, "name": "Serie Z", "average_price": 555130, "brand_name": "BMW"},
 {"id": 1269, "name": "Envision", "average_price": 597200, "brand_name": "Buick"},
 {"id": 1270, "name": "XT5", "average_price": 775655, "brand_name": "Cadillac"},
-{"id": 1271, "name": "CBO", "average_price": 173000, "brand_name": "Cbo"},
 {"id": 1272, "name": "Transit Van", "average_price": 498596, "brand_name": "Ford"},
 {"id": 1273, "name": "Beat", "average_price": 167757, "brand_name": "Chevrolet"},
 {"id": 1274, "name": "Bolt EV", "average_price": 695333, "brand_name": "Chevrolet"},
