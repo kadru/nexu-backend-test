@@ -1,5 +1,6 @@
 source "https://rubygems.org"
 
+gem "alba", "~> 3.2"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.2.0"
 # Use postgresql as the database for Active Record
