@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   resources :brands, only: %i[index create] do
     resources :models, only: %i[index create]
   end
+
+  resources :models, only: %i[update]
   # Defines the root path route ("/")
   # root "posts#index"
 end
