@@ -16,4 +16,29 @@ class BrandsControllerTest < ActionDispatch::IntegrationTest
     ],
     response.parsed_body
   end
+
+  test "POST /brands" do
+    post "/brands",
+         params: { name: "Toyoda" },
+         as: :json
+
+    parsed_response = response.parsed_body
+
+    assert_response :created
+    assert_kind_of Integer, parsed_response["id"]
+    assert_equal "Toyoda", parsed_response["name"]
+    assert_nil parsed_response["average_price"]
+  end
+
+  test "POST /brands when cannot create a brand" do
+    post "/brands",
+         params: { name: "Acura" },
+         as: :json
+
+    assert_response :unprocessable_entity
+    assert_equal(
+      {
+        "error_message" => "Name has already been taken"
+      }, response.parsed_body)
+  end
 end
