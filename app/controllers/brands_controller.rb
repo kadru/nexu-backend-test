@@ -4,12 +4,10 @@ class BrandsController < ApplicationController
   end
 
   def create
-    brand = Brand.new(name: params[:name])
+    brand = Brand.create(name: params[:name])
     if brand.valid?
       render status: :created,
-             json: BrandSerializer.new(
-              Brand.create!(name: params[:name])
-             )
+             json: BrandSerializer.new(brand)
     else
       render status: :unprocessable_entity,
              json: {
