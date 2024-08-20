@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
   resources :brands, only: %i[index create] do
-    resources :models, only: %i[index create]
+    resources :models, only: %i[index create], module: :brands
   end
 
   resources :models, only: %i[update]
