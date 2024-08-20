@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :models, only: %i[index create], module: :brands
   end
 
-  resources :models, only: %i[update]
+  resources :models, only: %i[index update]
   # Defines the root path route ("/")
   # root "posts#index"
 end

@@ -1,4 +1,9 @@
 class ModelsController < ApplicationController
+  def index
+    models = Model.filter_prices(greater: params[:greater], lower: params[:lower])
+    render json: ModelSerializer.new(models)
+  end
+
   def update
     model = Model.find params[:id]
 
